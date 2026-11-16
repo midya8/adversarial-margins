@@ -99,6 +99,8 @@ The selected norm subgradient is `sign(w)` for L-infinity input balls, normalize
 - Extreme scores, exact first optimizer update/final objective, deterministic training, work-cap preflight, explosive-update rejection, invalid schemas, dimension/row boundaries, input/RNG isolation and CLI failure behavior.
 - Both demo gate directions and every holdout witness. Four figure tests check all four bar coordinates, all 14 sweep points, full unchanged metadata, byte regeneration, input preservation and rejection of altered fits/attacks/fixtures.
 
+A separate CI job builds and installs the wheel, then runs all 80 tests outside the checkout. It checks all six package module paths before and after, compares seven complete JSON reports through both CLI entrypoints, and regenerates all three SVGs. Run `python examples/check_installed.py` locally; building needs pip and setuptools, but the installed package has no runtime dependencies.
+
 The references verify finite test families; they are not a machine-checked proof for arbitrary floating-point inputs. The SVG is generated from the complete unchanged demo, with the full fixture, models, settings, histories and audits embedded as metadata.
 
 ## Exact rational boundary audits

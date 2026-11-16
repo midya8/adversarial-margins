@@ -35,3 +35,13 @@ jobs:
       - run: python -m robustlab box-demo > /tmp/box-demo.json
       - run: PYTHONPATH=. python examples/render_box.py --check
       - run: python -m robustlab box-audit examples/model.json examples/data.json examples/bounds.json --norm l1 --epsilon 0.3
+  installed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python examples/check_installed.py
